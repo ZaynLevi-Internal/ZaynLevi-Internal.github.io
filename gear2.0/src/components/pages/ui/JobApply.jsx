@@ -86,9 +86,9 @@ const JobApply = () => {
   };
 
   return (
-    <div className="bg-black text-green-100 font-sans">
+    <div className="bg-black text-cyan-100 font-sans">
       {/* Hero Section */}
-      <section className="text-center h-[300px] md:h-[400px] py-24 md:py-32 bg-green-700 text-white relative overflow-hidden mb-12">
+      <section className="text-center h-[300px] md:h-[400px] py-24 md:py-32 bg-cyan-700 text-white relative overflow-hidden mb-12">
         {/* Background Image */}
         <div
           className="absolute inset-0 bg-cover bg-center"
@@ -119,7 +119,7 @@ const JobApply = () => {
               delaySpeed={1500}
             />
           </h1>
-          <p className="text-base sm:text-sm md:text-lg max-w-xl mx-auto text-gray-300">
+          <p className="text-base sm:text-sm md:text-lg max-w-xl mx-auto text-slate-300">
             We're always looking for passionate, driven individuals to grow with
             us. Explore open roles and build your future here.
           </p>
@@ -127,13 +127,13 @@ const JobApply = () => {
       </section>
 
       {/* Apply Section */}
-      <section className="bg-black py-12 px-6 pb-24 text-green-100">
+      <section className="bg-black py-12 px-6 pb-24">
         <div className="max-w-3xl mx-auto">
-          <h3 className="text-3xl font-bold text-green-300 mb-6">
+          <h3 className="text-3xl font-bold text-cyan-300 mb-6">
             Apply for {job.title}
           </h3>
 
-          <p className="mb-4 text-green-400">
+          <p className="mb-4 text-white-400">
             Fill in your details below to apply. Make sure to upload your
             updated resume and briefly describe why you’re a great fit for this
             role.
@@ -147,7 +147,7 @@ const JobApply = () => {
               onChange={handleChange}
               placeholder="Your Full Name"
               required
-              className="w-full p-4 bg-zinc-800 border border-green-600 rounded-md placeholder-green-500 text-green-100"
+              className="w-full p-4 bg-zinc-800 border border-cyan-600 rounded-md placeholder-white-500 text-cyan-100"
             />
             <input
               type="email"
@@ -156,7 +156,7 @@ const JobApply = () => {
               onChange={handleChange}
               placeholder="Email Address"
               required
-              className="w-full p-4 bg-zinc-800 border border-green-600 rounded-md placeholder-green-500 text-green-100"
+              className="w-full p-4 bg-zinc-800 border border-cyan-600 rounded-md placeholder-white-500 text-cyan-100"
             />
             <input
               type="tel"
@@ -165,7 +165,7 @@ const JobApply = () => {
               onChange={handleChange}
               placeholder="Phone Number"
               required
-              className="w-full p-4 bg-zinc-800 border border-green-600 rounded-md placeholder-green-500 text-green-100"
+              className="w-full p-4 bg-zinc-800 border border-cyan-600 rounded-md placeholder-white-500 text-cyan-100"
             />
             <input
               type="number"
@@ -175,7 +175,7 @@ const JobApply = () => {
               placeholder="Experience in Years"
               min="0"
               required
-              className="w-full p-4 bg-zinc-800 border border-green-600 rounded-md placeholder-green-500 text-green-100"
+              className="w-full p-4 bg-zinc-800 border border-cyan-600 rounded-md placeholder-white-500 text-cyan-100"
             />
             <input
               type="text"
@@ -184,7 +184,7 @@ const JobApply = () => {
               onChange={handleChange}
               placeholder="Your Key Skills"
               required
-              className="w-full p-4 bg-zinc-800 border border-green-600 rounded-md placeholder-green-500 text-green-100"
+              className="w-full p-4 bg-zinc-800 border border-cyan-600 rounded-md placeholder-white-500 text-cyan-100"
             />
             <textarea
               name="coverLetter"
@@ -192,10 +192,10 @@ const JobApply = () => {
               onChange={handleChange}
               placeholder="Short message (Cover Letter)"
               rows={4}
-              className="w-full p-4 bg-zinc-800 border border-green-600 rounded-md placeholder-green-500 text-green-100 resize-none"
+              className="w-full p-4 bg-zinc-800 border border-cyan-600 rounded-md placeholder-white-500 text-cyan-100 resize-none"
             />
             <div>
-              <label className="block text-green-300 mb-1">Upload Resume</label>
+              <label className="block text-cyan-300 mb-1">Upload Resume</label>
               <input
                 type="file"
                 name="resume"
@@ -203,13 +203,13 @@ const JobApply = () => {
                 onChange={handleChange}
                 required
                 ref={fileInputRef}
-                className="w-full p-3 bg-zinc-800 border border-green-600 rounded-md text-green-200 cursor-pointer"
+                className="w-full p-3 bg-zinc-800 border border-cyan-600 rounded-md placeholder-white-500 text-white-200 cursor-pointer"
               />
             </div>
             <button
               type="submit"
               disabled={status.loading}
-              className="bg-green-600 hover:bg-green-700 w-full py-4 rounded-md font-semibold text-white transition"
+              className="bg-cyan-600 hover:bg-cyan-700 w-full py-4 rounded-md font-semibold text-white transition"
             >
               {status.loading ? "Submitting..." : "Submit Application"}
             </button>
@@ -228,7 +228,7 @@ const JobApply = () => {
             <div className="bg-black text-white border border-white px-10 py-8 rounded-2xl shadow-2xl w-[90%] max-w-xl text-center backdrop-blur-md">
               <h2
                 className={`text-2xl font-bold mb-4 ${
-                  status.error ? "text-red-400" : "text-green-400"
+                  status.error ? "text-red-400" : "text-cyan-400"
                 }`}
               >
                 {status.error

@@ -204,10 +204,10 @@ const Training = () => {
       {/* Header Section */}
       <section className="relative bg-gray-950 py-28 text-center">
         <div className="max-w-3xl mx-auto px-6">
-          <h1 className="text-5xl font-bold text-green-400 mb-4">
+          <h1 className="text-5xl font-bold text-cyan-400 mb-4">
             Python + Generative AI Training
           </h1>
-          <p className="text-gray-300 text-lg">
+          <p className="text-slate-300 text-lg">
             Learn from engineers who build real products. Gain dual expertise in
             Python and Generative AI — from coding fundamentals to building
             LLM-powered applications.
@@ -215,7 +215,7 @@ const Training = () => {
           <div className="mt-8">
             <Link
               to="/apply-training"
-              className="px-8 py-3 bg-green-600 text-white rounded-lg hover:bg-green-500 font-semibold transition"
+              className="px-8 py-3 bg-cyan-600 text-white rounded-lg hover:bg-cyan-500 font-semibold transition"
             >
               Apply Now – ₹1999/-
             </Link>
@@ -239,7 +239,7 @@ const Training = () => {
         </motion.div>
 
         <motion.div variants={fadeScale}>
-          <h2 className="text-3xl font-bold text-green-400 mb-4">
+          <h2 className="text-3xl font-bold text-cyan-400 mb-4">
             Course Overview
           </h2>
           <p className="text-gray-300 mb-4 leading-relaxed">
@@ -248,7 +248,7 @@ const Training = () => {
             real-world projects using Generative AI technologies like LLMs,
             prompt engineering, and API integration.
           </p>
-          <ul className="text-gray-400 text-sm space-y-2">
+          <ul className="text-slate-400 text-sm space-y-2">
             <li>✅ 4-week intensive hybrid course</li>
             <li>✅ Learn from real product developers</li>
             <li>✅ Build deployable AI applications</li>
@@ -262,9 +262,9 @@ const Training = () => {
         variants={fadeInUp}
         initial="hidden"
         whileInView="visible"
-        className="bg-gray-950 py-20 px-6 text-center"
+        className="bg-slate-950 py-20 px-6 text-center"
       >
-        <h2 className="text-3xl font-bold text-green-400 mb-10">
+        <h2 className="text-3xl font-bold text-cyan-400 mb-10">
           What You’ll Learn
         </h2>
         <div className="max-w-5xl mx-auto grid sm:grid-cols-2 md:grid-cols-3 gap-8 text-left">
@@ -279,9 +279,9 @@ const Training = () => {
             <motion.div
               key={i}
               variants={fadeScale}
-              className="bg-gray-900 border border-gray-800 rounded-xl p-6 shadow hover:shadow-green-500 transition"
+              className="bg-gray-900 border border-gray-800 rounded-xl p-8 shadow hover:shadow-cyan-500 transition"
             >
-              <p className="text-gray-300">{item}</p>
+              <p className="text-slate-300">{item}</p>
             </motion.div>
           ))}
         </div>
@@ -294,7 +294,7 @@ const Training = () => {
         whileInView="visible"
         className="max-w-6xl mx-auto px-6 py-20"
       >
-        <h2 className="text-3xl font-bold text-center mb-12 text-green-400">
+        <h2 className="text-3xl font-bold text-center mb-12 text-cyan-400">
           Course Structure
         </h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
@@ -307,27 +307,27 @@ const Training = () => {
             <motion.div
               key={i}
               variants={fadeScale}
-              className="bg-gray-900 border border-gray-800 rounded-xl p-8 shadow hover:shadow-green-500 transition"
+              className="bg-gray-900 border border-gray-800 rounded-xl p-8 shadow hover:shadow-cyan-500 transition"
             >
-              <h3 className="text-xl font-bold text-green-400 mb-2">{week}</h3>
-              <p className="text-gray-300">{topic}</p>
+              <h3 className="text-xl font-bold text-cyan-400 mb-2">{week}</h3>
+              <p className="text-slate-300">{topic}</p>
             </motion.div>
           ))}
         </div>
       </motion.section>
 
       {/* Call to Action */}
-      <section className="text-center bg-green-600 py-16">
-        <h2 className="text-3xl font-bold mb-4 text-black">
+      <section className="text-center bg-cyan-600 py-16">
+        <h2 className="text-3xl font-bold mb-4 text-white">
           Ready to Upskill?
         </h2>
-        <p className="text-black/80 mb-8">
+        <p className="text-slate/80 mb-8">
           Join the Python + Generative AI Training and start building intelligent
           systems today.
         </p>
         <Link
           to="/apply-training"
-          className="px-10 py-3 bg-black text-green-400 font-semibold rounded-lg hover:bg-gray-900 transition"
+          className="px-10 py-3 bg-black text-cyan-400 font-semibold rounded-lg hover:bg-zinc-900 transition"
         >
           Apply Now
         </Link>

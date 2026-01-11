@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const LoadingScreen = () => {
   return (
-    <div className="fixed inset-0 bg-black text-green-400 flex items-center justify-center z-50">
+    <div className="fixed inset-0 bg-black text-cyan-400 flex items-center justify-center z-50">
       <motion.div
         initial={{ rotate: 0 }}
         animate={{ rotate: 360 }}

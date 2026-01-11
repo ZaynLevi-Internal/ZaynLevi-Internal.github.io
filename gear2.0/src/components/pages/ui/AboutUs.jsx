@@ -32,7 +32,7 @@ const scaleIn = {
 const AboutUs = () => {
 
   return (
-    <div className="bg-black text-green-100 overflow-x-hidden">
+    <div className="bg-black text-slate-100 overflow-x-hidden">
       <HeroSection
         backgroundImage="/images/aboutus.png"
         headlines={[
@@ -45,7 +45,7 @@ const AboutUs = () => {
 
       {/* Who We Are */}
       <motion.section
-        className="bg-black text-green-100 pt-8 pb-12 px-6"
+        className="bg-black text-slate-100 pt-8 pb-12 px-6"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: false, amount: 0.3 }}
@@ -53,7 +53,7 @@ const AboutUs = () => {
         transition={{ duration: 0.6 }}
       >
         <div className="max-w-6xl mx-auto text-center ">
-          <h2 className="text-4xl text-green-400 font-bold mb-6">Who We Are</h2>
+          <h2 className="text-4xl text-cyan-400 font-bold mb-6">Who We Are</h2>
           <p className="text-lg mb-4 text-justify">
             We're a young and ambitious team passionate about building thoughtful
             technology that empowers individuals and communities. Our foundation is
@@ -67,7 +67,7 @@ const AboutUs = () => {
 
       {/* Mission + Vision */}
       <motion.section
-        className="relative bg-gradient-to-br from-green-900 to-black text-white py-24 px-6"
+        className="relative bg-gradient-to-br from-blue-950 to-black text-white py-24 px-6"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: false, amount: 0.3 }}
@@ -76,7 +76,7 @@ const AboutUs = () => {
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center text-center">
           <motion.div variants={slideInLeft}>
             <h2 className="text-4xl font-bold mb-4 flex justify-center items-center gap-3">
-              <span className="text-green-400">🎯</span> Our Mission
+              <span className="text-cyan-400">🎯</span> Our Mission
             </h2>
             <p className="text-lg">
               To empower innovators and problem-solvers with digital tools that drive
@@ -86,7 +86,7 @@ const AboutUs = () => {
 
           <motion.div variants={slideInRight}>
             <h2 className="text-4xl font-bold mb-4 flex justify-center items-center gap-3">
-              <span className="text-green-400">🌍</span> Our Vision
+              <span className="text-cyan-400">🌍</span> Our Vision
             </h2>
             <p className="text-lg">
               A world where technology serves people, enhances collaboration, and
@@ -98,13 +98,13 @@ const AboutUs = () => {
 
       {/* What Makes Us Different */}
       <motion.section
-        className="bg-black text-green-100 py-24 px-6 "
+        className="bg-black text-slate-100 py-24 px-6 "
         initial="hidden"
         whileInView="visible"
         viewport={{ once: false, amount: 0.2 }}
         variants={staggerContainer}
       >
-        <h2 className="text-4xl font-bold text-center text-green-400 mb-14 ">What Makes Us Different</h2>
+        <h2 className="text-4xl font-bold text-center text-cyan-400 mb-14">What Makes Us Different</h2>
         <div className="grid md:grid-cols-3 gap-10 text-center max-w-6xl mx-auto">
           {[
             {
@@ -125,7 +125,7 @@ const AboutUs = () => {
           ].map((item, idx) => (
             <motion.div
               key={idx}
-              className="bg-green-950 p-8 rounded-2xl shadow-lg"
+              className="bg-slate-900 p-8 rounded-2xl shadow-lg"
               variants={scaleIn}
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
@@ -140,7 +140,7 @@ const AboutUs = () => {
 
       {/* Road Ahead */}
       <motion.section
-        className="bg-gradient-to-br from-black to-green-900 text-white py-24 px-6"
+        className="bg-gradient-to-br from-black to-blue-950 text-white py-24 px-6"
         initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: false, amount: 0.3 }}
@@ -152,7 +152,7 @@ const AboutUs = () => {
             We're just getting started. Our aim is to build a future where digital
             products empower, connect, and elevate communities around the world.
           </p>
-          <p className="text-green-300 font-semibold">
+          <p className="text-cyan-300 font-semibold">
             We’re building with intention — and you’re invited to be part of it.
           </p>
         </div>
@@ -167,14 +167,14 @@ const AboutUs = () => {
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <div className="max-w-xl mx-auto backdrop-blur-sm bg-white/10 p-10 rounded-2xl shadow-md">
-          <h2 className="text-3xl font-bold mb-4 text-green-400 ">Join Us on This Journey</h2>
+          <h2 className="text-3xl font-bold mb-4 text-cyan-400">Join Us on This Journey</h2>
           <p className="mb-6 text-lg">
             We’re just getting started — and we’re looking for curious minds to build
             with us.
           </p>
           <Link
             to="/career"
-            className="inline-block bg-black px-6 py-3 rounded-full text-green-200 hover:bg-green-100 hover:text-black transition"
+            className="inline-block bg-black px-6 py-3 rounded-full text-cyan-200 hover:bg-cyan-100 hover:text-black transition"
           >
             Explore Careers
           </Link>

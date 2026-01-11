@@ -25,17 +25,17 @@ export default function HeroSection() {
         transition={{ duration: 1 }}
       >
         <h1 className="text-5xl font-extrabold leading-tight">
-          Powering <span className="text-green-400">Innovation </span>
+          Powering <span className="text-cyan-400">Innovation </span>
           with AI, Robotics & IT
         </h1>
-        <p className="text-lg text-gray-300">
+        <p className="text-lg text-slate-300">
           From intelligent automation to digital transformation, we turn your green ideas into scalable tech.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link to="/services"  className="bg-green-500 hover:bg-green-600 px-6 py-3 rounded-lg font-semibold text-white">
+          <Link to="/services"  className="bg-cyan-500 hover:bg-cyan-600 px-6 py-3 rounded-lg font-semibold text-white">
             Explore Services
           </Link>
-          <Link to="/contact" className="border border-white px-6 py-3 rounded-lg hover:bg-white hover:text-green-600 font-semibold">
+          <Link to="/contact" className="border border-white px-6 py-3 rounded-lg hover:bg-white hover:text-cyan-600 font-semibold">
             Contact Us
           </Link>
         </div>

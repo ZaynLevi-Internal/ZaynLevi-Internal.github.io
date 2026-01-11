@@ -90,7 +90,7 @@ const testimonials = [
   {
     name: "JS Infra Developers",
     feedback:
-      "GEAR Gate's automated system makes vehicle entry fast and hassle-free. It's accurate, secure, and works seamlessly. Highly recommended!",
+      "ZL Gate's automated system makes vehicle entry fast and hassle-free. It's accurate, secure, and works seamlessly. Highly recommended!",
   },
   {
     name: "Green Home Enterprises",
@@ -100,7 +100,7 @@ const testimonials = [
   {
     name: "Crux-AI",
     feedback:
-      "The GEAR image generator creates stunning, tailored product visuals in seconds, making marketing faster, easier, and more effective.",
+      "The ZL image generator creates stunning, tailored product visuals in seconds, making marketing faster, easier, and more effective.",
   },
 ];
 
@@ -108,7 +108,7 @@ const Service = () => {
 
 
   return (
-    <div className="bg-black text-green-100 overflow-x-hidden">
+    <div className="bg-black text-cyan-100 overflow-x-hidden">
       <HeroSection
         backgroundImage="/images/service.png"
         headlines={[
@@ -131,7 +131,7 @@ const Service = () => {
       >
         <motion.h2
           variants={fadeInUp}
-          className="text-4xl font-bold mb-12 text-green-400 text-center"
+          className="text-4xl font-bold mb-12 text-cyan-400 text-center"
         >
           Our Services
         </motion.h2>
@@ -140,7 +140,7 @@ const Service = () => {
             <motion.div
               key={index}
               variants={fadeScale}
-              className="bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-green-500 transition duration-300"
+              className="bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-cyan-500 transition duration-300"
             >
               <div className="text-4xl mb-4">{service.icon}</div>
               <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
@@ -159,7 +159,7 @@ const Service = () => {
         viewport={{ once: false }}
         className="px-4 sm:px-10 lg:px-20 pt-0 pb-16"
       >
-        <h2 className="text-4xl font-bold text-center mb-12 text-green-400">
+        <h2 className="text-4xl font-bold text-center mb-12 text-cyan-400">
           Industries We Serve
         </h2>
         <motion.div
@@ -170,7 +170,7 @@ const Service = () => {
             <motion.div
               key={i}
               variants={fadeScale}
-              className="bg-gray-700 border border-green-500 rounded-xl p-6 text-center text-lg font-medium hover:scale-105 transition"
+              className="bg-gray-700 border border-cyan-500 rounded-xl p-6 text-center text-lg font-medium hover:scale-105 transition"
             >
               {industry}
             </motion.div>
@@ -187,7 +187,7 @@ const Service = () => {
         viewport={{ once: false }}
         className="px-4 sm:px-10 lg:px-20 pt-0 pb-16"
       >
-        <h2 className="text-4xl font-bold text-center mb-12 text-green-400">
+        <h2 className="text-4xl font-bold text-center mb-12 text-cyan-400">
           Technologies We Use
         </h2>
         <div className="flex flex-wrap justify-center gap-4 text-center">
@@ -195,7 +195,7 @@ const Service = () => {
             <motion.span
               key={i}
               variants={fadeScale}
-              className="bg-gray-700 px-6 py-3 rounded-full border border-green-400 text-sm font-medium"
+              className="bg-gray-700 px-6 py-3 rounded-full border border-cyan-400 text-sm font-medium"
             >
               {tech}
             </motion.span>
@@ -212,7 +212,7 @@ const Service = () => {
         viewport={{ once: false }}
         className="px-4 sm:px-10 lg:px-20 pt-0 pb-16"
       >
-        <h2 className="text-4xl font-bold text-center mb-12 text-green-400">
+        <h2 className="text-4xl font-bold text-center mb-12 text-cyan-400">
           Case Studies
         </h2>
         <div className="grid sm:grid-cols-2 gap-8">
@@ -238,7 +238,7 @@ const Service = () => {
         viewport={{ once: false }}
         className="px-4 sm:px-10 lg:px-20 pt-0 pb-16"
       >
-        <h2 className="text-4xl font-bold text-center mb-12 text-green-400">
+        <h2 className="text-4xl font-bold text-center mb-12 text-cyan-400">
           What Our Clients Say
         </h2>
         <div className="grid sm:grid-cols-2 gap-8">
@@ -246,10 +246,10 @@ const Service = () => {
             <motion.div
               key={i}
               variants={fadeScale}
-              className="bg-gray-800 p-6 rounded-xl border border-green-600 shadow-md"
+              className="bg-gray-800 p-6 rounded-xl border border-cyan-600 shadow-md"
             >
-              <p className="italic text-green-200 mb-4">“{t.feedback}”</p>
-              <p className="font-semibold">{t.name}</p>
+              <p className="italic text-gray-200 mb-4">“{t.feedback}”</p>
+              <p className="font-semibold text-white">{t.name}</p>
             </motion.div>
           ))}
         </div>
@@ -262,7 +262,7 @@ const Service = () => {
         variants={fadeInUp}
         transition={{ duration: 1.0 }}
         viewport={{ once: false }}
-        className="px-4 sm:px-10 lg:px-16 pt-0 pb-20 text-green-100"
+        className="px-4 sm:px-10 lg:px-16 pt-0 pb-20 text-cyan-100"
       >
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           <motion.div variants={slideInLeft} className="space-y-6">
@@ -275,7 +275,7 @@ const Service = () => {
             </p>
             <Link
               to="/contact"
-              className="inline-block bg-green-500 hover:bg-green-400 text-black font-bold px-8 py-3 rounded-xl transition duration-300"
+              className="inline-block bg-cyan-500 hover:bg-cyan-400 text-black font-bold px-8 py-3 rounded-xl transition duration-300"
             >
               Get in Touch
             </Link>

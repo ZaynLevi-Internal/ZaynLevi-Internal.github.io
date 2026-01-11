@@ -21,7 +21,7 @@ const itemVariants = {
 function Footer() {
   return (
     <footer
-      className="relative bg-gradient-to-br from-green-900 via-black to-gray-900 text-white py-16 px-6"
+     className="relative bg-gradient-to-br from-blue-950 via-slate-950 to-gray-900 text-white py-16 px-6"
     >
       {/* Footer Content */}
       <motion.div
@@ -34,19 +34,19 @@ function Footer() {
         {/* Logo Section */}
         <motion.div variants={itemVariants}>
           <motion.img
-            src="/images/logo.png"
-            alt="Gear Logo"
-            className="w-32 hover:scale-105 transition-transform"
+            src="/images/z.png"
+            alt="ZAYN LEVI Logo"
+            className="w-20 hover:scale-105 transition-transform"
             whileHover={{ scale: 1.05 }}
           />
-          <p className="text-sm text-gray-400 mt-2">
+          <p className="text-sm text-slate-400 mt-2">
             Committed to delivering exceptional services and cutting-edge solutions.
           </p>
         </motion.div>
 
         {/* Navigation Links */}
        <motion.div variants={itemVariants}>
-  <h3 className="font-semibold text-green-400 mb-3">Navigation</h3>
+  <h3 className="font-semibold text-cyan-400 mb-3">Navigation</h3>
   <ul className="space-y-2">
     {[
       { label: "Home", to: "/" },
@@ -63,7 +63,7 @@ function Footer() {
     if (window.location.pathname === to) {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
-  }}className="hover:text-green-500 transition">
+  }}className="hover:text-cyan-400 transition">
           {label}
         </Link>
       </motion.li>
@@ -73,7 +73,7 @@ function Footer() {
 
         {/* Quick Links */}
         <motion.div variants={itemVariants}>
-          <h3 className="font-semibold text-green-400 mb-3">Quick Links</h3>
+          <h3 className="font-semibold text-cyan-400 mb-3">Quick Links</h3>
           <ul className="space-y-2">
             {[
               { label: "Contact Us", to: "/contact" },
@@ -90,7 +90,7 @@ function Footer() {
     if (window.location.pathname === to) {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
-  }}className="hover:text-green-500 transition">
+  }}className="hover:text-cyan-500 transition">
                   {label}
                 </Link>
               </motion.li>
@@ -100,21 +100,21 @@ function Footer() {
 
         {/* Contact Info */}
         <motion.div variants={itemVariants}>
-          <h3 className="font-semibold text-green-400 mb-3">Contact</h3>
+          <h3 className="font-semibold text-cyan-400 mb-3">Contact</h3>
           {/* <p className="text-sm text-gray-400">London Eye, London, UK</p> */}
-          <p className="text-sm text-gray-400">+91 9502172867</p>
-          <p className="text-sm text-gray-400">support@servicesingear.com</p>
+          <p className="text-sm text-slate-400">+91 9502172867</p>
+          <p className="text-sm text-slate-400">support@servicesingear.com</p>
         </motion.div>
       </motion.div>
 
       {/* Footer Bottom */}
       <motion.p
-        className="text-center mt-10 text-xs text-green-300 border-t border-green-700 pt-4"
+        className="text-center mt-10 text-xs text-cyan-300 border-t border-slate-700 pt-4"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ delay: 0.3 }}
       >
-        © 2025 Gear · All Rights Reserved
+        © 2025 ZAYN LEVI TECHNOLOGIES PVT LTD · All Rights Reserved
       </motion.p>
     </footer>
   );

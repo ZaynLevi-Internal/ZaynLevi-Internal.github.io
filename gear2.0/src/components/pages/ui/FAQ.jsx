@@ -48,9 +48,9 @@ export default function FAQ() {
   };
 
   return (
-    <section className="bg-black text-white py-20">
+    <section className="bg-slate-950 text-white py-20">
       <div className="max-w-3xl mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center text-primary mb-10">
+        <h2 className="text-3xl font-bold text-center text-cyan-400 mb-10">
           Frequently Asked Questions
         </h2>
 
@@ -63,17 +63,17 @@ export default function FAQ() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.2 }}
               transition={{ duration: 0.4 }}
-              className="border-b border-gray-700 pb-4"
+              className="border-b border-slate-700 pb-4"
             >
               <button
                 onClick={() => toggle(index)}
-                className="w-full text-left text-lg font-semibold flex justify-between items-center hover:text-green-400 transition-colors"
+                className="w-full text-left text-lg font-semibold flex justify-between items-center hover:text-cyan-400 transition-colors"
               >
                 {faq.question}
                 <motion.span
                   animate={{ rotate: openIndex === index ? 180 : 0 }}
                   transition={{ duration: 0.3 }}
-                  className="ml-2 text-primary text-xl"
+                  className="ml-2 text-cyan-400 text-xl"
                 >
                   {openIndex === index ? "−" : "+"}
                 </motion.span>
@@ -89,7 +89,7 @@ export default function FAQ() {
                     transition={{ duration: 0.4 }}
                   >
                     <motion.p
-                      className="text-gray-400 mt-3"
+                      className="text-slate-400 mt-3"
                       layout
                       transition={{ duration: 0.4 }}
                     >

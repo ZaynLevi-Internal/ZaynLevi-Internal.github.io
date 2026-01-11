@@ -134,7 +134,7 @@ const Career = () => {
   };
 
   return (
-    <div className="bg-black text-green-100 font-sans">
+    <div className="bg-black text-slate-100 font-sans">
       {/* Hero Section */}
 
       <HeroSection
@@ -149,7 +149,7 @@ const Career = () => {
 
       {/* Why Us */}
       <section className="py-8 px-6 max-w-6xl mx-auto text-center">
-        <h2 className="text-3xl font-bold mb-12 text-green-400 ">
+        <h2 className="text-3xl font-bold mb-12 text-cyan-400 ">
           Why Work With Us?
         </h2>
 
@@ -164,10 +164,10 @@ const Career = () => {
             <motion.div
               key={idx}
               variants={item}
-              className="bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-xl transition"
+             className="bg-slate-800 p-6 rounded-xl shadow-md hover:shadow-xl transition"
             >
               <h3 className="text-xl font-semibold mb-2">✓ {benefit.title}</h3>
-              <p className="text-green-300 text-sm">{benefit.desc}</p>
+              <p className="text-cyan-300 text-sm">{benefit.desc}</p>
             </motion.div>
           ))}
         </motion.div>
@@ -186,10 +186,10 @@ const Career = () => {
               setSearch(e.target.value);
               setCurrentPage(1);
             }}
-            className="w-full p-2 mb-4 bg-gray-800 text-white rounded-md"
+            className="w-full p-2 mb-4 bg-slate-800 text-white rounded-md"
           />
 
-          <h4 className="text-lg font-semibold mt-4 mb-2 text-green-400">
+          <h4 className="text-lg font-semibold mt-4 mb-2 text-cyan-400">
             Job Type
           </h4>
           {["fullTime", "partTime", "contract", "intern"].map((type) => (
@@ -198,13 +198,13 @@ const Career = () => {
                 type="checkbox"
                 checked={filters[type]}
                 onChange={() => handleJobTypeChange(type)}
-                className="accent-green-500 mr-2"
+                className="accent-cyan-500 mr-2"
               />
               {type.replace(/([A-Z])/g, " $1").trim()}
             </label>
           ))}
 
-          <h4 className="text-lg font-semibold mt-4 mb-2 text-green-400">
+          <h4 className="text-lg font-semibold mt-4 mb-2 text-cyan-400">
             Department
           </h4>
           {departments.map((dept) => (
@@ -213,13 +213,13 @@ const Career = () => {
                 type="checkbox"
                 checked={filters.departments.includes(dept)}
                 onChange={() => handleCheckboxChange("departments", dept)}
-                className="accent-green-500 mr-2"
+                className="accent-cyan-500 mr-2"
               />
               {dept}
             </label>
           ))}
 
-          <h4 className="text-lg font-semibold mt-4 mb-2 text-green-400">
+          <h4 className="text-lg font-semibold mt-4 mb-2 text-cyan-400">
             Work Model
           </h4>
           {workModels.map((model) => (
@@ -228,7 +228,7 @@ const Career = () => {
                 type="checkbox"
                 checked={filters.workModels.includes(model)}
                 onChange={() => handleCheckboxChange("workModels", model)}
-                className="accent-green-500 mr-2"
+                className="accent-cyan-500 mr-2"
               />
               {model}
             </label>
@@ -245,44 +245,44 @@ const Career = () => {
               currentJobs.map((job, index) => (
                 <div
                   key={index}
-                  className="border border-green-700 rounded-xl p-6 hover:bg-green-900/10 transition"
+                  className="border border-slate-700 rounded-xl p-6 hover:bg-cyan-900/10 transition"
                 >
-                  <h3 className="text-xl font-semibold text-green-300">
+                  <h3 className="text-xl font-semibold text-cyan-300">
                     {job.title.split(" – ")[0]}
                   </h3>
-                  <p className="text-sm text-green-400">
+                  <p className="text-sm text-cyan-400">
                     {job.location} • {job.job_type}
                   </p>
-                  <p className="mt-2 text-green-200">
+                  <p className="mt-2 text-slate-200">
                     {job.description || "No description available."}
                   </p>
 
                   <Link
                     to={`/careers/${job.id}`}
-                    className="inline-block mt-4 px-4 py-2 text-sm bg-green-700 hover:bg-green-600 text-white rounded-md"
+                    className="inline-block mt-4 px-4 py-2 text-sm bg-cyan-700 hover:bg-cyan-600 text-white rounded-md"
                   >
                     Apply Now
                   </Link>
                 </div>
               ))
             ) : isFilterApplied() ? (
-              <p className="text-green-400 text-center">
+              <p className="text-cyan-400 text-center">
                 No jobs found matching your filters.
               </p>
             ) : (
-              <p className="text-green-400 text-center">
+              <p className="text-cyan-400 text-center">
                 No jobs available at the moment.
               </p>
             )}
           </div>
 
           {/* Pagination Controls */}
-          <div className="flex justify-center items-center space-x-2 mt-8 text-green-200">
+          <div className="flex justify-center items-center space-x-2 mt-8 text-slate-200">
             {/* Left Arrow */}
             <button
               onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
               disabled={currentPage === 1}
-              className="p-2 rounded hover:bg-green-700 disabled:opacity-50 disabled:cursor-not-allowed transition"
+              className="p-2 rounded hover:bg-cyan-700 disabled:opacity-50 disabled:cursor-not-allowed transition"
               aria-label="Previous Page"
             >
               ←
@@ -304,8 +304,8 @@ const Career = () => {
                     className={`w-8 h-8 rounded flex items-center justify-center text-sm font-semibold
             ${
               pageNum === currentPage
-                ? "bg-green-500 text-black"
-                : "hover:bg-green-700"
+                ? "bg-cyan-500 text-black"
+                : "hover:bg-cyan-700"
             }
           `}
                   >
@@ -332,7 +332,7 @@ const Career = () => {
                 setCurrentPage((prev) => Math.min(prev + 1, totalPages))
               }
               disabled={currentPage === totalPages}
-              className="p-2 rounded hover:bg-green-700 disabled:opacity-50 disabled:cursor-not-allowed transition"
+              className="p-2 rounded hover:bg-cyan-700 disabled:opacity-50 disabled:cursor-not-allowed transition"
               aria-label="Next Page"
             >
               →
@@ -354,14 +354,14 @@ const Career = () => {
         <h2 className="text-3xl font-bold mb-4">
           Didn't find a matching role?
         </h2>
-        <p className="mb-6 text-green-300">
+        <p className="mb-6 text-cyan-300">
           Send us your resume anyway — we’re always hiring great talent.
         </p>
 
         <button
           onClick={handleSendClick}
           disabled={loading}
-          className="bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-xl transition flex items-center justify-center mx-auto"
+          className="bg-cyan-600 hover:bg-cyan-700 text-white py-3 px-6 rounded-xl transition flex items-center justify-center mx-auto"
         >
           {loading ? (
             <>

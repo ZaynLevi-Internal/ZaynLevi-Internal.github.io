@@ -57,7 +57,7 @@ const Product = () => {
   };
 
   return (
-    <div className="bg-black text-green-100">
+    <div className="bg-black text-cyan-100">
       <HeroSection
         backgroundImage="/images/products.png"
         headlines={[
@@ -76,7 +76,7 @@ const Product = () => {
         viewport={{ once: false }}
         className="px-4 sm:px-10 lg:px-20 py-8"
       >
-        <h2 className="text-4xl font-bold text-center text-green-400  mb-12">
+        <h2 className="text-4xl font-bold text-center text-cyan-400  mb-12">
           Our Products
         </h2>
         <div className="max-w-7xl mx-auto px-4 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 pb-24">
@@ -87,17 +87,17 @@ const Product = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
               viewport={{ once: false }}
-              className="bg-zinc-900 p-6 rounded-xl shadow-md border border-green-700"
+              className="bg-zinc-900 p-6 rounded-xl shadow-md border border-cyan-700"
             >
               <img
                 src={product.image}
                 alt={product.name}
                 className="rounded-lg mb-4 w-full h-56 object-cover"
               />
-              <h2 className="text-2xl font-semibold mb-2 text-green-300">
+              <h2 className="text-2xl font-semibold mb-2 text-cyan-300">
                 {product.name}
               </h2>
-              <p className="text-green-400 mb-4">{product.info}</p>
+              <p className="text-slate-400 mb-4">{product.info}</p>
             </motion.div>
           ))}
         </div>
@@ -109,7 +109,7 @@ const Product = () => {
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: false, amount: 0.3 }}
-        className="text-green-100 py-16 px-6"
+        className="text-cyan-100 py-16 px-6"
       >
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-4 ">
@@ -127,7 +127,7 @@ const Product = () => {
               value={formData.name}
               onChange={handleChange}
               placeholder="Your Name"
-              className="p-3 rounded-lg bg-black text-white border border-green-700 focus:ring-2 focus:ring-green-500"
+              className="p-3 rounded-lg bg-black text-white border border-cyan-700 focus:ring-2 focus:ring-cyan-500"
               required
             />
             <input
@@ -136,7 +136,7 @@ const Product = () => {
               value={formData.email}
               onChange={handleChange}
               placeholder="Work Email Address"
-              className="p-3 rounded-lg bg-black text-white border border-green-700 focus:ring-2 focus:ring-green-500"
+              className="p-3 rounded-lg bg-black text-white border border-cyan-700 focus:ring-2 focus:ring-cyan-500"
               required
             />
             <input
@@ -145,7 +145,7 @@ const Product = () => {
               value={formData.phone}
               onChange={handleChange}
               placeholder="Phone Number"
-              className="p-3 rounded-lg bg-black text-white border border-green-700 focus:ring-2 focus:ring-green-500"
+              className="p-3 rounded-lg bg-black text-white border border-cyan-700 focus:ring-2 focus:ring-cyan-500"
               required
             />
             <input
@@ -154,7 +154,7 @@ const Product = () => {
               placeholder="Company Name"
               value={formData.company}
               onChange={handleChange}
-              className="p-3 rounded-lg bg-black text-white border border-green-700 focus:ring-2 focus:ring-green-500"
+              className="p-3 rounded-lg bg-black text-white border border-cyan-700 focus:ring-2 focus:ring-cyan-500"
             />
             <input
               type="text"
@@ -162,7 +162,7 @@ const Product = () => {
               placeholder="Your Position"
               value={formData.position}
               onChange={handleChange}
-              className="p-3 rounded-lg bg-black text-white border border-green-700 focus:ring-2 focus:ring-green-500"
+              className="p-3 rounded-lg bg-black text-white border border-cyan-700 focus:ring-2 focus:ring-cyan-500"
             />
             <input
               type="text"
@@ -170,7 +170,7 @@ const Product = () => {
               value={formData.query}
               onChange={handleChange}
               placeholder="Product you're interested in"
-              className="p-3 rounded-lg bg-black text-white border border-green-700 focus:ring-2 focus:ring-green-500"
+              className="p-3 rounded-lg bg-black text-white border border-cyan-700 focus:ring-2 focus:ring-cyan-500"
               required
             />
             <textarea
@@ -179,13 +179,13 @@ const Product = () => {
               onChange={handleChange}
               placeholder="How do you plan to use it in your business?"
               rows="3"
-              className="p-3 rounded-lg bg-black text-white border border-green-700 focus:ring-2 focus:ring-green-500 md:col-span-2"
+              className="p-3 rounded-lg bg-black text-white border border-cyan-700 focus:ring-2 focus:ring-cyan-500 md:col-span-2"
               required
             />
             <div className="md:col-span-2 text-center">
               <button
                 type="submit"
-                className="bg-green-600 hover:bg-green-500 text-white font-semibold px-6 py-3 rounded-full transition disabled:opacity-60"
+                className="bg-cyan-600 hover:bg-cyan-500 text-white font-semibold px-6 py-3 rounded-full transition disabled:opacity-60"
                 disabled={loading}
               >
                 {loading ? "Submitting..." : "Submit Inquiry"}

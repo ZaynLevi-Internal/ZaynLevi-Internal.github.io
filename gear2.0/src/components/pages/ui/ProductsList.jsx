@@ -32,8 +32,8 @@ const productsList = [
       id: 5,
       image: "/images/geargate.jpg",
        video: 'https://www.youtube.com/embed/Xa-jbNzeAGM',
-      name: 'GEAR Gate',
-      info: "GEAR Gate is an automated vehicle entry system that uses license plate recognition to provide fast, secure, and seamless access.",
+      name: 'ZL Gate',
+      info: "ZL Gate is an automated vehicle entry system that uses license plate recognition to provide fast, secure, and seamless access.",
     },
     {
       id: 6,

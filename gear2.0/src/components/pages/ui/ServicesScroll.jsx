@@ -67,12 +67,12 @@ export default function ServicesScroll() {
               variants={fadeUpStagger}
             className="md:w-1/3 flex flex-col justify-center mb-10 md:mb-0"
           >
-            <p className="text-green-400 uppercase tracking-wide mb-2 font-semibold">
+            <p className="text-cyan-400 uppercase tracking-wide mb-2 font-semibold">
               Innovating the Future
             </p>
             <h2 className="text-4xl font-bold mb-4">Our Robotics Services</h2>
             <p className="text-gray-300">
-              We specialize in transforming industries with cutting-edge Gear
+              We specialize in transforming industries with cutting-edge ZAYN LEVI
               solutions. Using Green Robotics in maintenance and consulting,
               our expertise is tailored to meet your unique needs.
             </p>
@@ -85,7 +85,7 @@ export default function ServicesScroll() {
               onClick={scrollUp}
               whileTap={{ scale: 0.9 }}
               whileHover={{ scale: 1.2 }}
-              className="text-green-400 text-3xl hover:text-green-600 transition"
+              className="text-cyan-400 text-3xl hover:text-cyan-600 transition"
               aria-label="Scroll up"
             >
               ▲
@@ -94,7 +94,7 @@ export default function ServicesScroll() {
             {/* Scrollable container */}
             <div
               ref={serviceRowsRef}
-              className="h-80 overflow-y-auto w-full space-y-6 scrollbar-thin scrollbar-thumb-green-600 scrollbar-track-gray-700 px-3"
+              className="h-80 overflow-y-auto w-full space-y-6 scrollbar-thin scrollbar-thumb-slate-600 scrollbar-track-gray-700 px-3"
             >
               {services.map(({ icon, title, desc }, idx) => (
                 <motion.div
@@ -119,7 +119,7 @@ export default function ServicesScroll() {
               onClick={scrollDown}
               whileTap={{ scale: 0.9 }}
               whileHover={{ scale: 1.2 }}
-              className="text-green-400 text-3xl hover:text-green-600 transition"
+              className="text-cyan-400 text-3xl hover:text-cyan-600 transition"
               aria-label="Scroll down"
             >
               ▼

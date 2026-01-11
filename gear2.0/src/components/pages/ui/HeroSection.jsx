@@ -29,7 +29,7 @@ const HeroSection = ({ backgroundImage, headlines, subtext }) => {
             delaySpeed={1500}
           />
         </h1>
-        <p className="text-base sm:text-sm md:text-lg max-w-xl mx-auto text-gray-300">
+        <p className="text-base sm:text-sm md:text-lg max-w-xl mx-auto text-slate-300">
           {subtext}
         </p>
       </div>

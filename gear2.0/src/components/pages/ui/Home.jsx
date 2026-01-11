@@ -99,13 +99,13 @@ const Home = () => {
   // if (loading) return <LoadingScreen />;
 
   return (
-    <div className="bg-black text-green-400 min-h-screen font-sans overflow-hidden">
+    <div className="bg-black text-cyan-400 min-h-screen font-sans overflow-hidden">
       <Image3D />
    
 
       {/* Why Us */}
       <section className="relative z-10 py-32 px-6 text-center bg-black">
-        <h2 className="text-3xl font-bold mb-8">Why Choose Us?</h2>
+        <h2 className="text-3xl font-bold mb-8 text-cyan-400">Why Choose Us?</h2>
         <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto text-left">
           {[
             ["🌱 Sustainable by Design", "Every solution is eco-conscious."],
@@ -121,7 +121,7 @@ const Home = () => {
           ].map(([title, desc], i) => (
             <motion.div
               key={i}
-              className="border-l-4 pl-4 border-green-500"
+              className="border-l-4 pl-4 border-cyan-500"
               custom={i + 1}
               initial="hidden"
               whileInView="visible"
@@ -129,7 +129,7 @@ const Home = () => {
               viewport={{ once: false, amount: 0.3 }}
             >
               <h4 className="text-lg font-semibold mb-1">{title}</h4>
-              <p className="text-green-200">{desc}</p>
+              <p className="text-slate-300">{desc}</p>
             </motion.div>
           ))}
         </div>
@@ -143,7 +143,7 @@ const Home = () => {
         className="bg-black text-white py-20"
       >
         <div className="max-w-6xl mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold text-primary mb-12">Our Process</h2>
+          <h2 className="text-4xl font-bold text-cyan-400 mb-12">Our Process</h2>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
@@ -175,13 +175,13 @@ const Home = () => {
                 whileInView="visible"
                 variants={zoomIn}
                 viewport={{ once: false, amount: 0.2 }}
-                className="bg-gray-900 border border-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-green-500 transition duration-300"
+                className="bg-gray-900 border border-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-cyan-500 transition duration-300"
               >
                 <div className="text-3xl mb-4">{icon}</div>
-                <h3 className="text-xl font-semibold mb-2 text-green-400">
+                <h3 className="text-xl font-semibold mb-2 text-cyan-400">
                   {title}
                 </h3>
-                <p className="text-sm text-gray-400">{desc}</p>
+                <p className="text-sm text-slate-400">{desc}</p>
               </motion.div>
             ))}
           </div>
@@ -224,10 +224,10 @@ const Home = () => {
     animate="visible"
     viewport={{ once: false, amount: 0.3 }}
     variants={fadeUpStagger} className="md:sticky top-32">
-              <h2 className="text-4xl font-bold text-primary mb-4">
+              <h2 className="text-4xl font-bold text-cyan-400 mb-4">
                 Our Products
               </h2>
-              <p className="text-gray-300">
+              <p className="text-slate-300">
                 From smart robotics to AI tools, chatbots, and enterprise
                 websites — we engineer powerful solutions that drive automation,
                 intelligence, and innovation.
@@ -251,10 +251,10 @@ const Home = () => {
                     alt={product.name}
                     className="w-full h-40 object-cover rounded-lg mb-3"
                   />
-                  <h3 className="text-lg font-semibold text-primary">
+                  <h3 className="text-lg font-semibold text-cyan-400">
                     {product.name}
                   </h3>
-                  <p className="text-gray-400 text-sm">{product.info}</p>
+                  <p className="text-slate-400 text-sm">{product.info}</p>
                 </div>
               ))}
             </div>
@@ -340,7 +340,7 @@ const Home = () => {
   <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
     
     {/* Left Side: Highlight Box */}
-    <div className="bg-gradient-to-tr from-green-700 to-green-500 rounded-3xl p-10 shadow-2xl flex flex-col justify-center">
+    <div className="bg-gradient-to-tr from-cyan-700 to-cyan-500 rounded-3xl p-10 shadow-2xl flex flex-col justify-center">
       <h2 className="text-4xl font-bold mb-4">Level Up Your Skills</h2>
       <p className="text-gray-100 mb-6">
         We build innovative products — and now you can learn how we do it. Join our **Python + Generative AI** training program and gain hands-on experience with real-world projects.
@@ -349,7 +349,7 @@ const Home = () => {
       <div className="flex flex-col sm:flex-row gap-4">
         <Link
           to="/apply-training"
-          className="px-6 py-3 bg-black text-green-400 font-semibold rounded-lg hover:bg-white hover:text-black transition text-center"
+          className="px-6 py-3 bg-black text-cyan-400 font-semibold rounded-lg hover:bg-white hover:text-black transition text-center"
         >
           Apply Now
         </Link>
@@ -386,12 +386,12 @@ const Home = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: i * 0.2, duration: 0.6 }}
-          className="bg-gray-900 rounded-2xl p-6 flex items-start gap-4 shadow-lg hover:shadow-green-500 transition"
+          className="bg-gray-900 rounded-2xl p-6 flex items-start gap-4 shadow-lg hover:shadow-cyan-500 transition"
         >
           <div className="text-4xl">{icon}</div>
           <div>
-            <h3 className="text-xl font-semibold text-green-400 mb-1">{title}</h3>
-            <p className="text-gray-300 text-sm">{desc}</p>
+            <h3 className="text-xl font-semibold text-cyan-400 mb-1">{title}</h3>
+            <p className="text-slate-300 text-sm">{desc}</p>
           </div>
         </motion.div>
       ))}
@@ -421,13 +421,13 @@ const Home = () => {
           <div className="flex justify-center gap-4">
             <Link
               to="/products"
-              className="bg-white text-green-700 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition"
+              className="bg-white text-cyan-700 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition"
             >
               View Products
             </Link>
             <Link
               to="/career"
-              className="border border-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-green-700 transition"
+              className="border border-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-cyan-700 transition"
             >
               Join Us
             </Link>

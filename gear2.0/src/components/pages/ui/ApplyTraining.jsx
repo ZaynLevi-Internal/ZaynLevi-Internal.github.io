@@ -62,26 +62,26 @@ const ApplyTraining = () => {
   return (
     <div className="bg-black text-white min-h-screen flex items-center justify-center px-6 py-20">
       <motion.div
-        className="w-full max-w-2xl bg-gray-900 rounded-2xl p-8 shadow-lg border border-gray-800"
+        className="w-full max-w-2xl bg-slate-900 rounded-2xl p-8 shadow-lg border border-slate-800"
         initial="hidden"
         animate="visible"
         variants={fadeIn}
       >
-        <h2 className="text-3xl font-bold text-green-400 mb-6 text-center">
+        <h2 className="text-3xl font-bold text-cyan-400 mb-6 text-center">
           Apply for Training
         </h2>
-        <p className="text-gray-400 text-center mb-8">
+        <p className="text-slate-400 text-center mb-8">
           Fill in the form below to apply for Python, Generative AI, training programs.
         </p>
 
         {submitted ? (
           <div className="text-center space-y-4">
-            <div className="text-green-400 font-semibold">
+            <div className="text-cyan-400 font-semibold">
               ✅ Thank you! Your application has been submitted.
             </div>
             <button
               onClick={handleGoBack}
-              className="px-6 py-2 mt-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg font-semibold transition"
+              className="px-6 py-2 mt-2 bg-slate-700 hover:bg-slate-600 text-white rounded-lg font-semibold transition"
             >
               Go Back
             </button>
@@ -96,7 +96,7 @@ const ApplyTraining = () => {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full p-3 rounded-lg bg-gray-800 text-white border border-gray-700 focus:ring-2 focus:ring-green-500"
+                className="w-full p-3 rounded-lg bg-gray-800 text-white border border-gray-700 focus:ring-2 focus:ring-cyan-500"
               />
             </div>
 
@@ -108,7 +108,7 @@ const ApplyTraining = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full p-3 rounded-lg bg-gray-800 text-white border border-gray-700 focus:ring-2 focus:ring-green-500"
+                className="w-full p-3 rounded-lg bg-gray-800 text-white border border-gray-700 focus:ring-2 focus:ring-cyan-500"
               />
             </div>
 
@@ -120,7 +120,7 @@ const ApplyTraining = () => {
                 value={formData.phone}
                 onChange={handleChange}
                 required
-                className="w-full p-3 rounded-lg bg-gray-800 text-white border border-gray-700 focus:ring-2 focus:ring-green-500"
+                className="w-full p-3 rounded-lg bg-gray-800 text-white border border-gray-700 focus:ring-2 focus:ring-cyan-500"
               />
             </div>
 
@@ -150,7 +150,7 @@ const ApplyTraining = () => {
                 value={formData.message}
                 onChange={handleChange}
                 rows="2"
-                className="w-full p-3 rounded-lg bg-gray-800 text-white border border-gray-700 focus:ring-2 focus:ring-green-500"
+                className="w-full p-3 rounded-lg bg-gray-800 text-white border border-gray-700 focus:ring-2 focus:ring-cyan-500"
               />
             </div>
 
@@ -158,7 +158,8 @@ const ApplyTraining = () => {
               type="submit"
               disabled={loading}
               className={`w-full py-3 rounded-lg font-semibold transition ${
-                loading ? "bg-gray-600 cursor-not-allowed" : "bg-green-600 hover:bg-green-500"
+               loading   ? "bg-slate-600 cursor-not-allowed"  : "bg-cyan-600 hover:bg-cyan-500"
+
               }`}
             >
               {loading ? "Submitting..." : "Submit Application"}

@@ -58,7 +58,7 @@ export default function ContactUs() {
   };
 
   return (
-    <div className="bg-black text-green-100 font-sans">
+    <div className="bg-black text-slate-100 font-sans">
       <HeroSection
         backgroundImage="/images/contact.png"
         headlines={["Let’s connect now", "Here to help", "Answers start here"]}
@@ -95,7 +95,7 @@ export default function ContactUs() {
         ].map((card, i) => (
           <motion.div
             key={i}
-            className="bg-gray-900 p-6 rounded-xl shadow-md text-green-200 hover:shadow-lg transition text-center"
+            className="bg-slate-900 p-6 rounded-xl shadow-md text-slate-200 hover:shadow-lg transition text-center"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: i * 0.1 }}
@@ -109,8 +109,8 @@ export default function ContactUs() {
               <img src={card.icon} alt={card.title} className="w-16 h-16" />
             </motion.div>
             <h3 className="text-lg font-semibold">{card.title}</h3>
-            <p className="text-green-300 mb-1">{card.value}</p>
-            <p className="text-sm text-green-400">{card.desc}</p>
+            <p className="text-cyan-300 mb-1">{card.value}</p>
+            <p className="text-sm text-slate-400">{card.desc}</p>
           </motion.div>
         ))}
       </motion.div>
@@ -136,7 +136,7 @@ export default function ContactUs() {
               value={formData.email}
               onChange={handleChange}
               required
-              className="flex-1 p-4 rounded-xl bg-gray-800 text-white placeholder-green-300 outline-none"
+              className="flex-1 p-4 rounded-xl bg-slate-800 text-white placeholder-slate-300 outline-none"
             />
             <input
               type="tel"
@@ -145,7 +145,7 @@ export default function ContactUs() {
               value={formData.phone}
               onChange={handleChange}
               required
-              className="flex-1 p-4 rounded-xl bg-gray-800 text-white placeholder-green-300 outline-none"
+              className="flex-1 p-4 rounded-xl bg-slate-800 text-white placeholder-slate-300 outline-none"
             />
           </div>
           <div className="flex flex-col md:flex-row gap-4">
@@ -155,7 +155,7 @@ export default function ContactUs() {
               placeholder="Company Name"
               value={formData.company}
               onChange={handleChange}
-              className="flex-1 p-4 rounded-xl bg-gray-800 text-white placeholder-green-300 outline-none"
+              className="flex-1 p-4 rounded-xl bg-slate-800 text-white placeholder-slate-300 outline-none"
             />
             <input
               type="text"
@@ -163,7 +163,7 @@ export default function ContactUs() {
               placeholder="Your Position"
               value={formData.position}
               onChange={handleChange}
-              className="flex-1 p-4 rounded-xl bg-gray-800 text-white placeholder-green-300 outline-none"
+              className="flex-1 p-4 rounded-xl bg-slate-800 text-white placeholder-slate-300 outline-none"
             />
           </div>
           <input
@@ -173,7 +173,7 @@ export default function ContactUs() {
             value={formData.name}
             onChange={handleChange}
             required
-            className="w-full p-4 rounded-xl bg-gray-800 text-white placeholder-green-300 outline-none"
+            className="w-full p-4 rounded-xl bg-slate-800 text-white placeholder-slate-300 outline-none"
           />
           <input
             type="text"
@@ -182,7 +182,7 @@ export default function ContactUs() {
             value={formData.query}
             onChange={handleChange}
             required
-            className="w-full p-4 rounded-xl bg-gray-800 text-white placeholder-green-300 outline-none"
+            className="w-full p-4 rounded-xl bg-slate-800 text-white placeholder-slate-300 outline-none"
           />
           <textarea
             name="description"
@@ -191,13 +191,13 @@ export default function ContactUs() {
             value={formData.description}
             onChange={handleChange}
             required
-            className="w-full p-4 rounded-xl bg-gray-800 text-white placeholder-green-300 outline-none"
+            className="w-full p-4 rounded-xl bg-slate-800 text-white placeholder-slate-300 outline-none"
           ></textarea>
           <div className="flex justify-center">
             <button
               type="submit"
               disabled={loading}
-              className="bg-green-600 hover:bg-green-800 transition duration-300 text-white px-6 py-3 rounded-xl flex items-center justify-center gap-2"
+              className="bg-cyan-600 hover:bg-cyan-800 transition duration-300 text-white px-6 py-3 rounded-xl flex items-center justify-center gap-2"
             >
               {loading && (
                 <svg
@@ -227,7 +227,7 @@ export default function ContactUs() {
 
         {/* Image */}
         <div className="flex justify-center md:col-span-1 relative">
-          <div className="absolute top-4 left-4 w-full max-w-[500px] h-full bg-gray-900 z-0"></div>
+          <div className="absolute top-4 left-4 w-full max-w-[500px] h-full bg-slate-900 z-0"></div>
           <img
             src="/images/Contactus_sideimage.png"
             alt="Contact"
@@ -282,7 +282,7 @@ export default function ContactUs() {
             <a
               key={i}
               href={social.href}
-              className="text-green-300 hover:text-white"
+              className="text-cyan-300 hover:text-white"
             >
               <img
                 src={`/images/${social.icon}`}

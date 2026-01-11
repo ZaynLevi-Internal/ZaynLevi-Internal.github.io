@@ -42,7 +42,7 @@ export default function StatsCounter() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-12" ref={ref}>
           {stats.map(({ label }, i) => (
             <div key={i} className="flex flex-col items-center">
-              <span className="text-5xl font-extrabold text-green-400">
+              <span className="text-5xl font-extrabold text-cyan-400">
                 {counts[i]}
               </span>
               <p className="mt-2 text-lg">{label}</p>
