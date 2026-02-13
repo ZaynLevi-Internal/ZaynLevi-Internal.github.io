@@ -118,7 +118,7 @@ app.post('/submit', async (req, res) => {
       Messages: [
         {
           From: { Email: "utils.gear@gmail.com", Name: "Services In Gear" },
-          To: [{ Email: "support@servicesingear.com", Name: "Support Team" }],
+          To: [{ Email: "business@zaynlevi.com", Name: "Support Team" }],
           Subject: "New Contact Form Submission",
           HTMLPart: `
             <h2>New Contact Message</h2>

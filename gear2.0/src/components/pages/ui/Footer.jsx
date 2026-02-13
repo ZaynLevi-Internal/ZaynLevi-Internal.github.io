@@ -103,7 +103,7 @@ function Footer() {
           <h3 className="font-semibold text-cyan-400 mb-3">Contact</h3>
           {/* <p className="text-sm text-gray-400">London Eye, London, UK</p> */}
           <p className="text-sm text-slate-400">+91 9502172867</p>
-          <p className="text-sm text-slate-400">support@servicesingear.com</p>
+          <p className="text-sm text-slate-400">business@zaynlevi.com</p>
         </motion.div>
       </motion.div>
 

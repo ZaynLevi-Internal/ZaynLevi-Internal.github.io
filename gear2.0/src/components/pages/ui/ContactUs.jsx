@@ -83,7 +83,7 @@ export default function ContactUs() {
           {
             icon: "/images/email.svg",
             title: "Email",
-            value: "support@servicesingear.com",
+            value: "business@zaynlevi.com",
             desc: "Send us an email and we’ll reply within 24 hours.",
           },
           {
