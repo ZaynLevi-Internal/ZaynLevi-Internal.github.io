@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import allJobs from "./Jobs"; // Adjust the path based on where your files are located
 import { Typewriter } from "react-simple-typewriter";
-import { ContinuousImageScroll } from "./ContinuousImageScroll.JSX";
+import { ContinuousImageScroll } from "./ContinuousImageScroll.jsx";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import HeroSection from "./HeroSection";
