@@ -47,7 +47,7 @@ const Navbar = () => {
         {/* Logo */}
        <div className="flex items-center gap-2 text-2xl font-extrabold tracking-wide">
   <img src="/images/z.png" alt="ZAYN LEVI Logo" className="w-8" />
-  <p className="text-white text-md">Zayn Levi</p>
+  <p className="text-white text-md">Zayn Levi Technologies</p>
 </div>
 
         {/* Desktop Navigation */}

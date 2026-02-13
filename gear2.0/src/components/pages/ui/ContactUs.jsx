@@ -77,7 +77,7 @@ export default function ContactUs() {
           {
             icon: "/images/phone.svg",
             title: "Phone",
-            value: "+91 9502172867",
+            value: "+91 6300854318",
             desc: "Reach us anytime between 9am–6pm IST for quick assistance.",
           },
           {
