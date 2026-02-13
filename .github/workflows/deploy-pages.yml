@@ -41,4 +41,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./gear2.0/dist
           publish_branch: gh-pages
-          cname: zaynlevi-internal.github.io
+          cname: www.zaynlevi.com
