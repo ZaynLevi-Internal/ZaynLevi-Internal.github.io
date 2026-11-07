@@ -1,323 +1,441 @@
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import {
-  ArrowDown,
-  ArrowRight,
-  ArrowUpRight,
-  Bot,
-  BrainCircuit,
-  Code2,
-  GraduationCap,
-  Lightbulb,
-  MoveUpRight,
-  Puzzle,
-  Sparkles,
-} from "lucide-react";
+import productsList from "./ProductsList";
 import { Link } from "react-router-dom";
 import FAQ from "./FAQ";
-import productsList from "./ProductsList";
+import StatsCounter from "./StatsCounter";
+import ServicesScroll from "./ServicesScroll";
+import Image3D from "./Image3D";
+import LoadingScreen from "./LoadingScreen"; // import loading screen
 
-const services = [
-  {
-    number: "01",
-    icon: <BrainCircuit aria-hidden="true" />,
-    title: "AI & machine learning",
-    description:
-      "Thoughtful AI, chatbots, and predictive tools that make everyday work smarter.",
-    color: "coral",
-  },
-  {
-    number: "02",
-    icon: <Bot aria-hidden="true" />,
-    title: "Robotics engineering",
-    description:
-      "Robotics and automation designed to solve practical, real-world challenges.",
-    color: "lime",
-  },
-  {
-    number: "03",
-    icon: <Code2 aria-hidden="true" />,
-    title: "Digital experiences",
-    description:
-      "Scalable websites, apps, and cloud infrastructure built around your goals.",
-    color: "lavender",
-  },
-  {
-    number: "04",
-    icon: <Puzzle aria-hidden="true" />,
-    title: "Technology consulting",
-    description:
-      "A collaborative partner to help you choose, connect, and get more from technology.",
-    color: "blue",
-  },
-];
-
-const process = [
-  ["01", "Listen", "We get to know your goals, your people, and the problem to solve."],
-  ["02", "Imagine", "We turn the big idea into a practical plan and clear next steps."],
-  ["03", "Make", "We build, test, and refine with you—not in a black box."],
-  ["04", "Grow", "We launch thoughtfully and help your solution keep getting better."],
-];
-
-const appear = {
-  hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.55 } },
+const fadeIn = {
+  hidden: { opacity: 0, y: 40 },
+  visible: (i = 1) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.2,
+      duration: 0.6,
+    },
+  }),
 };
 
-function Home() {
+const zoomIn = {
+  hidden: { scale: 0.8, opacity: 0 },
+  visible: (i = 1) => ({
+    scale: 1,
+    opacity: 1,
+    transition: {
+      delay: i * 0.15,
+      duration: 0.5,
+    },
+  }),
+};
+
+const slideInLeft = {
+  hidden: { x: -50, opacity: 0 },
+  visible: (i = 1) => ({
+    x: 0,
+    opacity: 1,
+    transition: {
+      delay: i * 0.2,
+      duration: 0.6,
+    },
+  }),
+};
+
+const slideInRight = {
+  hidden: { x: 50, opacity: 0 },
+  visible: (i = 1) => ({
+    x: 0,
+    opacity: 1,
+    transition: {
+      delay: i * 0.2,
+      duration: 0.6,
+    },
+  }),
+};
+
+const fadeUpStagger = {
+  hidden: { opacity: 0, y: 30 },
+  visible: (i = 1) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.15,
+      duration: 0.5,
+    },
+  }),
+};
+
+const Home = () => {
+  // const [loading, setLoading] = useState(true);
+
+
+
+  const services = [
+    {
+      title: "AI & Machine Learning",
+      desc: "Custom AI solutions including chatbots, predictive analytics, and automation tools.",
+      icon: "🤖",
+    },
+    {
+      title: "Robotics Engineering",
+      desc: "Design and build robotics systems for manufacturing, automation, and sustainability.",
+      icon: "🦾",
+    },
+    {
+      title: "IT & Web Development",
+      desc: "Full-stack development of scalable websites, apps, and cloud infrastructure.",
+      icon: "💻",
+    },
+    {
+      title: "Consulting & Support",
+      desc: "Expert advice to optimize your tech stack, improve workflows, and maintain your systems.",
+      icon: "🧩",
+    },
+  ];
+
+  // if (loading) return <LoadingScreen />;
+
   return (
-    <main className="home-page">
-      <section className="home-hero">
-        <video
-          className="home-hero__video"
-          autoPlay
-          muted
-          loop
-          playsInline
-          aria-hidden="true"
-        >
-          <source src="/video/main_video.mp4" type="video/mp4" />
-        </video>
-        <div className="home-hero__veil" />
-        <div className="home-hero__content">
-          <motion.div
-            className="home-hero__copy"
-            initial="hidden"
-            animate="visible"
-            variants={appear}
-          >
-            <p className="eyebrow eyebrow--light">
-              <Sparkles size={15} aria-hidden="true" />
-              A little more human. A lot more future.
-            </p>
-            <h1>
-              Big ideas,
-              <br />
-              <span>made real.</span>
-            </h1>
-            <p className="home-hero__intro">
-              We make useful technology for a changing world—from intelligent
-              automation to digital experiences that move your business forward.
-            </p>
-            <div className="home-hero__actions">
-              <Link className="button button--lime" to="/services">
-                See what we do <ArrowUpRight size={18} aria-hidden="true" />
-              </Link>
-              <Link className="button button--outline-light" to="/contact">
-                Let’s talk
-              </Link>
-            </div>
-            <a className="home-hero__scroll" href="#what-we-do">
-              <span>Scroll to explore</span>
-              <ArrowDown size={16} aria-hidden="true" />
-            </a>
-          </motion.div>
+    <div className="bg-black text-cyan-400 min-h-screen font-sans overflow-hidden">
+      <Image3D />
+   
 
-          <motion.div
-            className="home-hero__art"
-            initial={{ opacity: 0, scale: 0.94, rotate: 2 }}
-            animate={{ opacity: 1, scale: 1, rotate: 0 }}
-            transition={{ duration: 0.8, delay: 0.15 }}
-          >
-            <div className="hero-art__orbit hero-art__orbit--one" />
-            <div className="hero-art__orbit hero-art__orbit--two" />
-            <div className="hero-art__image">
-              <img src="/images/robotarm.jpg" alt="Robotic arm prototype" />
-            </div>
-            <div className="hero-art__sticker">
-              <Lightbulb size={22} aria-hidden="true" />
-              <span>Curiosity<br />in motion</span>
-            </div>
-            <div className="hero-art__caption">
-              <span>Human ideas</span>
-              <MoveUpRight size={16} aria-hidden="true" />
-              <span>Real-world impact</span>
-            </div>
-          </motion.div>
-        </div>
-        <div className="home-hero__ticker" aria-label="Our focus">
-          <span>Artificial intelligence</span><i />
-          <span>Robotics</span><i />
-          <span>Digital products</span><i />
-          <span>Better futures</span>
-        </div>
-      </section>
-
-      <section className="home-intro section-wrap" id="what-we-do">
-        <motion.div
-          className="home-intro__label"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.25 }}
-          variants={appear}
-        >
-          <span className="section-index">01 / WHAT WE DO</span>
-          <span className="intro-sparkle">✳</span>
-        </motion.div>
-        <motion.div
-          className="home-intro__text"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.25 }}
-          variants={appear}
-        >
-          <h2>
-            Technology should feel like a <em>possibility,</em> not a puzzle.
-          </h2>
-          <p>
-            We bring together creative thinking and engineering know-how to
-            build technology that makes a difference—designed with care, built
-            to last, and made for people.
-          </p>
-          <Link className="text-link" to="/about">
-            Get to know us <ArrowRight size={17} aria-hidden="true" />
-          </Link>
-        </motion.div>
-      </section>
-
-      <section className="services-section section-wrap">
-        <div className="section-heading">
-          <div>
-            <span className="section-index">02 / OUR EXPERTISE</span>
-            <h2>Good work starts with a good question.</h2>
-          </div>
-          <Link className="text-link" to="/services">
-            All services <ArrowUpRight size={17} aria-hidden="true" />
-          </Link>
-        </div>
-        <div className="service-grid">
-          {services.map((service, index) => (
-            <motion.article
-              className={`service-card service-card--${service.color}`}
-              key={service.number}
+      {/* Why Us */}
+      <section className="relative z-10 py-32 px-6 text-center bg-black">
+        <h2 className="text-3xl font-bold mb-8 text-cyan-400">Why Choose Us?</h2>
+        <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto text-left">
+          {[
+            ["🌱 Sustainable by Design", "Every solution is eco-conscious."],
+            [
+              "🧠 AI, Robotics & IT Experts",
+              "Smart systems built for real-world performance.",
+            ],
+            [
+              "🤝 Fully Collaborative",
+              "We work closely with you step-by-step.",
+            ],
+            ["⚡ Fast Prototyping", "From concept to product — quickly."],
+          ].map(([title, desc], i) => (
+            <motion.div
+              key={i}
+              className="border-l-4 pl-4 border-cyan-500"
+              custom={i + 1}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, amount: 0.2 }}
-              variants={appear}
-              transition={{ delay: index * 0.08 }}
+              variants={i % 2 === 0 ? slideInLeft : slideInRight}
+              viewport={{ once: false, amount: 0.3 }}
             >
-              <div className="service-card__top">
-                <span className="service-card__number">{service.number}</span>
-                <span className="service-card__icon">{service.icon}</span>
-              </div>
-              <h3>{service.title}</h3>
-              <p>{service.description}</p>
-              <Link
-                to="/services"
-                aria-label={`Learn more about ${service.title}`}
-                className="service-card__link"
-              >
-                <ArrowUpRight size={19} aria-hidden="true" />
-              </Link>
-            </motion.article>
+              <h4 className="text-lg font-semibold mb-1">{title}</h4>
+              <p className="text-slate-300">{desc}</p>
+            </motion.div>
           ))}
         </div>
       </section>
 
-      <section className="products-section">
-        <div className="section-wrap">
-          <div className="section-heading section-heading--products">
-            <div>
-              <span className="section-index">03 / THINGS WE’VE MADE</span>
-              <h2>Ideas with a little bit of hardware.</h2>
-            </div>
-            <p>
-              From a first sketch to a working product, we make technology
-              tangible.
-            </p>
-          </div>
-          <div className="product-grid">
-            {productsList.slice(0, 3).map((product, index) => (
-              <motion.article
-                className={`product-card product-card--${index + 1}`}
-                key={product.id}
+      <section
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.2 }}
+        variants={fadeIn}
+        className="bg-black text-white py-20"
+      >
+        <div className="max-w-6xl mx-auto px-6 text-center">
+          <h2 className="text-4xl font-bold text-cyan-400 mb-12">Our Process</h2>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                icon: "🔍",
+                title: "Discover",
+                desc: "We begin by understanding your challenges...",
+              },
+              {
+                icon: "🧠",
+                title: "Design",
+                desc: "We craft intelligent architectures...",
+              },
+              {
+                icon: "🛠️",
+                title: "Build",
+                desc: "Our cross-functional teams bring your vision...",
+              },
+              {
+                icon: "🚀",
+                title: "Deploy",
+                desc: "We deliver production-ready solutions...",
+              },
+            ].map(({ icon, title, desc }, i) => (
+              <motion.div
+                key={i}
+                custom={i}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, amount: 0.2 }}
-                variants={appear}
+                variants={zoomIn}
+                viewport={{ once: false, amount: 0.2 }}
+                className="bg-gray-900 border border-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-cyan-500 transition duration-300"
               >
-                <Link
-                  to="/products"
-                  className="product-card__image"
-                  aria-label={`Explore ${product.name}`}
-                >
-                  <img src={product.image} alt={product.name} loading="lazy" />
-                  <span className="product-card__arrow">
-                    <ArrowUpRight size={20} aria-hidden="true" />
-                  </span>
-                </Link>
-                <div className="product-card__details">
-                  <span>0{index + 1} / PROJECT</span>
-                  <h3>{product.name}</h3>
-                  <p>{product.info}</p>
-                </div>
-              </motion.article>
+                <div className="text-3xl mb-4">{icon}</div>
+                <h3 className="text-xl font-semibold mb-2 text-cyan-400">
+                  {title}
+                </h3>
+                <p className="text-sm text-slate-400">{desc}</p>
+              </motion.div>
             ))}
           </div>
-          <div className="products-link-row">
-            <Link className="button button--dark" to="/products">
-              Explore our products <ArrowRight size={18} aria-hidden="true" />
+        </div>
+      </section>
+
+
+     
+      {/* 
+    <section className="text-white py-20 min-h-screen">
+      <div className="max-w-6xl mx-auto px-6">
+        <h1 className="text-4xl text-center mb-14 font-bold tracking-wide text-green-400">
+          Our Services
+        </h1>
+        <div className="grid md:grid-cols-2 gap-10">
+          {services.map(({ title, desc, icon }) => (
+            <div
+              key={title}
+              className="flex space-x-6 p-6 bg-gray-800 rounded-lg border border-green-600 hover:border-green-400 transition cursor-pointer shadow-lg"
+            >
+              <div className="text-5xl flex items-center">{icon}</div>
+              <div>
+                <h2 className="text-xl font-bold mb-1">{title}</h2>
+                <p className="text-gray-300 text-sm">{desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section> */}
+
+      <section className="bg-black text-white py-20">
+        <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row gap-12 relative">
+          {/* Left Side (Vertically and Horizontally Centered) */}
+         <div
+            className="md:w-1/3 flex items-center justify-center text-center md:text-left"
+          >
+            <motion.div
+          initial="hidden"
+    animate="visible"
+    viewport={{ once: false, amount: 0.3 }}
+    variants={fadeUpStagger} className="md:sticky top-32">
+              <h2 className="text-4xl font-bold text-cyan-400 mb-4">
+                Our Products
+              </h2>
+              <p className="text-slate-300">
+                From smart robotics to AI tools, chatbots, and enterprise
+                websites — we engineer powerful solutions that drive automation,
+                intelligence, and innovation.
+              </p>
+            
+            
+          </motion.div>
+          </div>
+
+          {/* Right Side: Infinite Scroll with Pause on Hover */}
+          <div className="md:w-2/3 overflow-hidden relative group">
+            <div className="flex w-max animate-infinite-scroll group-hover:[animation-play-state:paused]">
+              {[...productsList, ...productsList].map((product, index) => (
+                <div
+                  key={`${product.id}-${index}`}
+                  className="min-w-[250px] max-w-[250px] mx-3 bg-gray-900 p-4 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300"
+                  custom={index}
+                >
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="w-full h-40 object-cover rounded-lg mb-3"
+                  />
+                  <h3 className="text-lg font-semibold text-cyan-400">
+                    {product.name}
+                  </h3>
+                  <p className="text-slate-400 text-sm">{product.info}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+{/* 
+     
+      <section className="bg-gray-950 text-white py-20">
+        <div className="max-w-6xl mx-auto px-6 text-center">
+          <h2 className="text-4xl font-bold text-green-400 mb-12">
+            Apply for Training
+          </h2>
+          <p className="text-gray-300 mb-10 max-w-2xl mx-auto">
+            Want to upskill in cutting-edge technologies? We offer hands-on
+            training programs designed to help you master real-world skills in
+            Python, Generative AI, Robotics, and more.
+          </p>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                icon: "🐍",
+                title: "Python Programming",
+                desc: "Master Python for data analysis, automation, and full-stack projects.",
+              },
+              {
+                icon: "🤖",
+                title: "Generative AI",
+                desc: "Learn to build GenAI apps with LLMs, prompt engineering, and fine-tuning.",
+              },
+              {
+                icon: "🦾",
+                title: "Robotics",
+                desc: "Get hands-on with robotics programming, sensors, and automation systems.",
+              },
+              {
+                icon: "☁️",
+                title: "Cloud & DevOps",
+                desc: "Understand CI/CD pipelines, Docker, Kubernetes, and cloud deployment.",
+              },
+              {
+                icon: "💻",
+                title: "Web Development",
+                desc: "Build scalable websites and apps with React, Node.js, and modern stacks.",
+              },
+              {
+                icon: "🧠",
+                title: "AI & ML Basics",
+                desc: "Start your journey into machine learning with practical projects.",
+              },
+            ].map(({ icon, title, desc }, i) => (
+              <motion.div
+                key={i}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: false, amount: 0.2 }}
+                variants={fadeUpStagger}
+                custom={i + 1}
+                className="bg-gray-900 border border-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-green-500 transition duration-300"
+              >
+                <div className="text-4xl mb-4">{icon}</div>
+                <h3 className="text-xl font-semibold mb-2 text-green-400">
+                  {title}
+                </h3>
+                <p className="text-sm text-gray-400 mb-4">{desc}</p>
+                <Link
+                  to="/apply-training"
+                  className="inline-block px-5 py-2 bg-green-600 text-white rounded-lg hover:bg-green-500 transition font-semibold"
+                >
+                  Apply Now
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section> */}
+
+      
+
+{/* Training Section – Fresh Design */}
+<section className="bg-black text-white py-28">
+  <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+    
+    {/* Left Side: Highlight Box */}
+    <div className="bg-gradient-to-tr from-cyan-700 to-cyan-500 rounded-3xl p-10 shadow-2xl flex flex-col justify-center">
+      <h2 className="text-4xl font-bold mb-4">Level Up Your Skills</h2>
+      <p className="text-gray-100 mb-6">
+        We build innovative products — and now you can learn how we do it. Join our **Python + Generative AI** training program and gain hands-on experience with real-world projects.
+      </p>
+      <p className="text-lg font-semibold mb-6 text-white/90">Price: ₹1999/-</p>
+      <div className="flex flex-col sm:flex-row gap-4">
+        <Link
+          to="/apply-training"
+          className="px-6 py-3 bg-black text-cyan-400 font-semibold rounded-lg hover:bg-white hover:text-black transition text-center"
+        >
+          Apply Now
+        </Link>
+        {/* <Link
+          to="/training"
+          className="px-6 py-3 border border-white text-white rounded-lg hover:bg-white hover:text-black transition text-center"
+        >
+          More Details
+        </Link> */}
+      </div>
+    </div>
+
+    {/* Right Side: Feature Highlights */}
+    <div className="grid grid-cols-1 gap-6">
+      {[
+        {
+          title: "Hands-On Python Projects",
+          desc: "Learn by doing, from coding exercises to complete real-world projects.",
+          icon: "🐍",
+        },
+        {
+          title: "Generative AI Mastery",
+          desc: "Build AI apps, explore prompt engineering, and work with LLMs.",
+          icon: "🤖",
+        },
+        {
+          title: "Expert Mentorship",
+          desc: "Guidance from professionals who build products daily.",
+          icon: "🧑‍💻",
+        },
+      ].map(({ title, desc, icon }, i) => (
+        <motion.div
+          key={i}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: i * 0.2, duration: 0.6 }}
+          className="bg-gray-900 rounded-2xl p-6 flex items-start gap-4 shadow-lg hover:shadow-cyan-500 transition"
+        >
+          <div className="text-4xl">{icon}</div>
+          <div>
+            <h3 className="text-xl font-semibold text-cyan-400 mb-1">{title}</h3>
+            <p className="text-slate-300 text-sm">{desc}</p>
+          </div>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
+
+
+      <FAQ />
+      <motion.section
+        className="relative bg-cover bg-center bg-no-repeat text-white py-20 text-center"
+        style={{ backgroundImage: "url('/images/contact_HomePage.png')" }}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.2 }}
+        variants={fadeIn}
+      >
+        <div className="bg-black/60 absolute inset-0 z-0" />
+        <div className="relative z-10 max-w-3xl mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-4">
+            Join Our Mission to Shape the Future
+          </h2>
+          <p className="mb-6 text-white/90">
+            Be part of a team that’s engineering sustainable innovations and
+            intelligent solutions.
+          </p>
+          <div className="flex justify-center gap-4">
+            <Link
+              to="/products"
+              className="bg-white text-cyan-700 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition"
+            >
+              View Products
+            </Link>
+            <Link
+              to="/career"
+              className="border border-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-cyan-700 transition"
+            >
+              Join Us
             </Link>
           </div>
         </div>
-      </section>
-
-      <section className="process-section section-wrap">
-        <div className="process-section__heading">
-          <span className="section-index">04 / HOW WE WORK</span>
-          <h2>From “what if?” to “what’s next?”</h2>
-          <p>
-            Great work is a team sport. We keep the process open, collaborative,
-            and focused on what matters.
-          </p>
-        </div>
-        <div className="process-grid">
-          {process.map(([number, title, description]) => (
-            <article className="process-step" key={number}>
-              <span className="process-step__number">{number}</span>
-              <span className="process-step__line" />
-              <h3>{title}</h3>
-              <p>{description}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="training-banner section-wrap">
-        <div className="training-banner__shape" aria-hidden="true">✳</div>
-        <div className="training-banner__copy">
-          <span className="section-index">A LITTLE ROOM TO GROW</span>
-          <h2>Learn by making things that matter.</h2>
-          <p>
-            Build practical Python and generative AI skills with hands-on
-            projects and expert mentorship.
-          </p>
-          <Link className="button button--dark" to="/apply-training">
-            Explore training <ArrowUpRight size={18} aria-hidden="true" />
-          </Link>
-        </div>
-        <div className="training-banner__badge">
-          <GraduationCap size={34} aria-hidden="true" />
-          <span>Make your<br />next move</span>
-        </div>
-      </section>
-
-      <FAQ />
-
-      <section className="home-contact section-wrap">
-        <div className="home-contact__decoration" aria-hidden="true">✳</div>
-        <span className="section-index">GOOD THINGS START WITH A HELLO</span>
-        <h2>Got a big idea?<br /><em>Let’s make it happen.</em></h2>
-        <div className="home-contact__actions">
-          <Link className="button button--lime" to="/contact">
-            Start a conversation <ArrowUpRight size={18} aria-hidden="true" />
-          </Link>
-          <Link className="text-link text-link--light" to="/career">
-            Or come build with us <ArrowRight size={17} aria-hidden="true" />
-          </Link>
-        </div>
-      </section>
-    </main>
+      </motion.section>
+    </div>
   );
-}
+};
 
 export default Home;
