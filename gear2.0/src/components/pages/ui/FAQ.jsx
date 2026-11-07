@@ -48,13 +48,14 @@ export default function FAQ() {
   };
 
   return (
-    <section className="bg-slate-950 text-white py-20">
-      <div className="max-w-3xl mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center text-cyan-400 mb-10">
+    <section className="faq-section">
+      <div className="faq-section__inner">
+        <span className="section-index">05 / THE DETAILS</span>
+        <h2>
           Frequently Asked Questions
         </h2>
 
-        <div className="space-y-4">
+        <div className="faq-section__list">
           {faqs.map((faq, index) => (
             <motion.div
               key={index}
@@ -63,17 +64,20 @@ export default function FAQ() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.2 }}
               transition={{ duration: 0.4 }}
-              className="border-b border-slate-700 pb-4"
+              className="faq-section__item"
             >
               <button
+                type="button"
                 onClick={() => toggle(index)}
-                className="w-full text-left text-lg font-semibold flex justify-between items-center hover:text-cyan-400 transition-colors"
+                className="faq-section__question"
+                aria-expanded={openIndex === index}
               >
                 {faq.question}
                 <motion.span
                   animate={{ rotate: openIndex === index ? 180 : 0 }}
                   transition={{ duration: 0.3 }}
-                  className="ml-2 text-cyan-400 text-xl"
+                  className="faq-section__toggle"
+                  aria-hidden="true"
                 >
                   {openIndex === index ? "−" : "+"}
                 </motion.span>
@@ -87,12 +91,9 @@ export default function FAQ() {
                     animate={{ opacity: 1, height: "auto" }}
                     exit={{ opacity: 0, height: 0 }}
                     transition={{ duration: 0.4 }}
+                    className="faq-section__answer"
                   >
-                    <motion.p
-                      className="text-slate-400 mt-3"
-                      layout
-                      transition={{ duration: 0.4 }}
-                    >
+                    <motion.p layout transition={{ duration: 0.4 }}>
                       {faq.answer}
                     </motion.p>
                   </motion.div>
