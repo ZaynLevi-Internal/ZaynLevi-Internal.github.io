@@ -1,40 +1,17 @@
-// components/HeroSection.jsx
-import React from 'react';
-import { Typewriter } from 'react-simple-typewriter';
+export default function HeroSection({ backgroundImage, headlines = [], subtext }) {
+  const headline = headlines[0] || "Technology for your next chapter";
 
-const HeroSection = ({ backgroundImage, headlines, subtext }) => {
   return (
-    <section className="text-center h-[300px] md:h-[400px] py-24 md:py-32 text-white relative overflow-hidden mb-12">
-      {/* Background */}
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage: `url(${backgroundImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          height: '100%',
-        }}
-      ></div>
-
-      {/* Content */}
-      <div className="relative z-10">
-        <h1 className="text-4xl sm:text-3xl md:text-5xl font-bold mb-4 text-white">
-          <Typewriter
-            words={headlines}
-            loop={0}
-            cursor
-            cursorStyle="|"
-            typeSpeed={70}
-            deleteSpeed={50}
-            delaySpeed={1500}
-          />
-        </h1>
-        <p className="text-base sm:text-sm md:text-lg max-w-xl mx-auto text-slate-300">
-          {subtext}
-        </p>
+    <section
+      className="legacy-page-hero"
+      style={backgroundImage ? { backgroundImage: `linear-gradient(100deg, rgba(3, 11, 28, .94), rgba(6, 27, 73, .72)), url("${backgroundImage}")` } : undefined}
+    >
+      <div className="legacy-page-hero-grid" aria-hidden="true" />
+      <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
+        <p className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-cyan-200">Zayn Levi Technologies Pvt Ltd</p>
+        <h1>{headline}</h1>
+        {subtext && <p>{subtext}</p>}
       </div>
     </section>
   );
-};
-
-export default HeroSection;
+}

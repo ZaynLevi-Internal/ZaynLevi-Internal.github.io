@@ -1,9 +1,9 @@
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Home from './components/pages/ui/Home';
-import AboutUs from './components/pages/ui/AboutUs';
-import Service from './components/pages/ui/Service';
-import Product from './components/pages/ui/Product';
-import ContactUs from './components/pages/ui/ContactUs';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './components/pages/ui/HomePage';
+import AboutUs from './components/pages/ui/AboutPage';
+import Service from './components/pages/ui/ServicesPage';
+import Product from './components/pages/ui/SolutionsPage';
+import ContactUs from './components/pages/ui/ContactPage';
 import Career from './components/pages/ui/Career';
 import Navbar from './components/pages/ui/Navbar';
 import Footer from './components/pages/ui/Footer';

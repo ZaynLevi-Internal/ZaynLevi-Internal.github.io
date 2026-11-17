@@ -1,123 +1,66 @@
+import { ArrowUpRight, Instagram, Linkedin } from "lucide-react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import Brand from "./Brand";
+import { companyEmail, companyPhone, companySocialLinks } from "./companyContact";
 
-const containerVariants = {
-  hidden: { opacity: 0, y: 40 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      staggerChildren: 0.2,
-      duration: 0.6,
-    },
-  },
-};
+const linkClass = "footer-link";
 
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 },
-};
-
-function Footer() {
+export default function Footer() {
   return (
-    <footer
-     className="relative bg-gradient-to-br from-blue-950 via-slate-950 to-gray-900 text-white py-16 px-6"
-    >
-      {/* Footer Content */}
-      <motion.div
-        className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 z-10 relative"
-         initial="hidden"
-      whileInView="visible"
-      viewport={{ once: false, amount: 0.2 }}
-        variants={containerVariants}
-      >
-        {/* Logo Section */}
-        <motion.div variants={itemVariants}>
-          <motion.img
-            src="/images/z.png"
-            alt="ZAYN LEVI Logo"
-            className="w-20 hover:scale-105 transition-transform"
-            whileHover={{ scale: 1.05 }}
-          />
-          <p className="text-sm text-slate-400 mt-2">
-            Committed to delivering exceptional services and cutting-edge solutions.
+    <footer className="site-footer">
+      <div className="mx-auto grid max-w-7xl gap-10 px-5 py-14 sm:px-8 md:grid-cols-2 lg:grid-cols-[1.4fr_0.8fr_1.1fr_0.9fr]">
+        <div>
+          <Brand footer />
+          <p className="mt-5 max-w-xs text-sm leading-6 text-slate-400">
+            AI, software, and digital solutions shaped around real business needs.
           </p>
-        </motion.div>
-
-        {/* Navigation Links */}
-       <motion.div variants={itemVariants}>
-  <h3 className="font-semibold text-cyan-400 mb-3">Navigation</h3>
-  <ul className="space-y-2">
-    {[
-      { label: "Home", to: "/" },
-      { label: "About Us", to: "/about" },
-      { label: "Services", to: "/services" },
-      { label: "Products", to: "/products" },
-    ].map(({ label, to }, i) => (
-      <motion.li
-        key={i}
-        whileHover={{ scale: 1.05 }}
-        transition={{ type: "spring", stiffness: 300 }}
-      >
-        <Link to={to} onClick={() => {
-    if (window.location.pathname === to) {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-  }}className="hover:text-cyan-400 transition">
-          {label}
-        </Link>
-      </motion.li>
-    ))}
-  </ul>
-</motion.div>
-
-        {/* Quick Links */}
-        <motion.div variants={itemVariants}>
-          <h3 className="font-semibold text-cyan-400 mb-3">Quick Links</h3>
-          <ul className="space-y-2">
-            {[
-              { label: "Contact Us", to: "/contact" },
-              { label: "Careers", to: "/career" },
-              // { label: "FAQ", to: "/faq" },
-              // { label: "Blog", to: "/blog" },
-            ].map(({ label, to }, i) => (
-              <motion.li
-                key={i}
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <Link to={to} onClick={() => {
-    if (window.location.pathname === to) {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-  }}className="hover:text-cyan-500 transition">
-                  {label}
-                </Link>
-              </motion.li>
-            ))}
+        </div>
+        <div>
+          <h2 className="footer-heading">Quick links</h2>
+          <ul className="space-y-3">
+            <li><Link className={linkClass} to="/">Home</Link></li>
+            <li><Link className={linkClass} to="/about">About us</Link></li>
+            <li><Link className={linkClass} to="/services">Services</Link></li>
+            <li><Link className={linkClass} to="/products">Solutions</Link></li>
+            <li><Link className={linkClass} to="/#solutions">Our work</Link></li>
+            <li><Link className={linkClass} to="/services#industries">Industries</Link></li>
+            <li><Link className={linkClass} to="/contact">Contact us</Link></li>
+            <li><Link className={linkClass} to="/career">Careers</Link></li>
+            <li><Link className={linkClass} to="/training">Training</Link></li>
           </ul>
-        </motion.div>
-
-        {/* Contact Info */}
-        <motion.div variants={itemVariants}>
-          <h3 className="font-semibold text-cyan-400 mb-3">Contact</h3>
-          {/* <p className="text-sm text-gray-400">London Eye, London, UK</p> */}
-          <p className="text-sm text-slate-400">+91 6300854318</p>
-          <p className="text-sm text-slate-400">business@zaynlevi.com</p>
-        </motion.div>
-      </motion.div>
-
-      {/* Footer Bottom */}
-      <motion.p
-        className="text-center mt-10 text-xs text-cyan-300 border-t border-slate-700 pt-4"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ delay: 0.3 }}
-      >
-        © 2025 ZAYN LEVI TECHNOLOGIES PVT LTD · All Rights Reserved
-      </motion.p>
+        </div>
+        <div>
+          <h2 className="footer-heading">What we do</h2>
+          <ul className="space-y-3">
+            <li><Link className={linkClass} to="/services">AI &amp; automation</Link></li>
+            <li><Link className={linkClass} to="/services">Robotics</Link></li>
+            <li><Link className={linkClass} to="/services">Cloud solutions</Link></li>
+            <li><Link className={linkClass} to="/services">Software development</Link></li>
+            <li><Link className={linkClass} to="/services">Business systems</Link></li>
+            <li><Link className={linkClass} to="/services">Web &amp; mobile applications</Link></li>
+            <li><Link className={linkClass} to="/services">Digital growth</Link></li>
+          </ul>
+        </div>
+        <div>
+          <h2 className="footer-heading">Get in touch</h2>
+          <a className={linkClass} href={`mailto:${companyEmail}`}>{companyEmail}</a>
+          <a className={`${linkClass} mt-3 block`} href={companyPhone.href}>{companyPhone.display}</a>
+          <Link to="/contact" className="footer-contact-link">Start a conversation <ArrowUpRight size={15} /></Link>
+          <div className="footer-social-links" aria-label="Social media">
+            {companySocialLinks.map((social) => {
+              const Icon = social.name === "Instagram" ? Instagram : Linkedin;
+              return (
+                <a key={social.name} href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.name}>
+                  <Icon size={17} />
+                </a>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+      <div className="footer-bottom">
+        <p>© {new Date().getFullYear()} Zayn Levi Technologies Pvt Ltd. All rights reserved.</p>
+      </div>
     </footer>
   );
 }
-
-export default Footer;
